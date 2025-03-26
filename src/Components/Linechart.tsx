@@ -1,6 +1,6 @@
 import html2canvas from 'html2canvas';
 import { Download } from 'lucide-react'
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import {  Line, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, LineChart } from 'recharts';
 import data_0 from "../../src/Data/data_0.json";
 import data_1 from "../Data/data_1.json";

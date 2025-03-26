@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 
 const UserDetails = () => {
   const [userData, setUserData] = useState<{ email?: string; name?: string; phone?: string; address?: string } | null>(null);

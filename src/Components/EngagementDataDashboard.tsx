@@ -14,18 +14,18 @@ interface DeviceData {
     pinCode: string;
   };
   connectionStatus: {
-    connected: string;
-    disconnected: null | boolean;
+    connected: string | null;
+    disconnected: null | boolean | string;
     isConnected: boolean;
     lastUpdated: string;
   };
   hw_data: {
     battery: {
-      temperature: number;
-      percentage: number;
+      temperature: number | string;
+      percentage: number | string;
     };
     sim: {
-      signalStrength: number;
+      signalStrength: number | string;
     };
   };
 }

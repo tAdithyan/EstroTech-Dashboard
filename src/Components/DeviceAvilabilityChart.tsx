@@ -1,5 +1,5 @@
 import { ArrowDown, Download } from "lucide-react";
-import { PieChart, Pie, Cell, Tooltip, CellProps } from "recharts";
+import { PieChart, Pie, Cell, Tooltip } from "recharts";
 import { useRef } from "react";
 import html2canvas from "html2canvas";
 
@@ -84,7 +84,7 @@ const DeviceAvailabilityChart: React.FC<DeviceAvailabilityChartProps> = ({ devic
             label={({ name, percentage }) => `${name}: ${percentage}%`}
             labelLine={false}
           >
-            {chartData.map((entry, index) => (
+            {chartData.map((_entry, index) => (
               <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
             ))}
           </Pie>

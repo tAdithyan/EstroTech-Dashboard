@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import data_0 from "../../src/Data/data_0.json";
 import data_1 from "../Data/data_1.json";
 import DeviceAvailabilityChart from "./DeviceAvilabilityChart";
@@ -122,7 +122,8 @@ const Dashboard: React.FC = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div>\
+        
         <DeviceActivityList updatedDeviceData={updatedDeviceData} />
         <OfflineDevices deviceData={deviceData} />
       </div>

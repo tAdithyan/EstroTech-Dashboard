@@ -9,7 +9,7 @@ interface DeviceLocation {
 
 interface DeviceConnectionStatus {
   isConnected: boolean;
-  disconnected: string;
+  disconnected: string | null;
   lastUpdated: string;
 }
 
@@ -19,12 +19,12 @@ interface DeviceHwData {
     operator: string;
   };
   battery: {
-    percentage: number;
+    percentage: number | string;
   };
 }
 
 interface Device {
-  id: string;
+  id: string | number;
   deviceName: string;
   connectionStatus: DeviceConnectionStatus;
   location: DeviceLocation;
@@ -41,7 +41,7 @@ const OfflineDevices: React.FC<OfflineDevicesProps> = ({ deviceData }) => {
   const offlineDevices = deviceData.filter(device => !device.connectionStatus.isConnected);
 
   const processedDevices = offlineDevices.map(device => {
-    const disconnectedTime = new Date(device.connectionStatus.disconnected);
+    const disconnectedTime = device?.connectionStatus?.disconnected ? new Date(device.connectionStatus.disconnected) : new Date(0);
     const currentTime = new Date();
     const timeDiffMs = currentTime.getTime() - disconnectedTime.getTime();
         const hours = Math.floor(timeDiffMs / (1000 * 60 * 60));

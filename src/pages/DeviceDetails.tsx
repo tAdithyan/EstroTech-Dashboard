@@ -35,7 +35,12 @@ const DeviceMonitoringDashboard = () => {
   console.log(id)
 
 
-  const deviceDetails = deviceData.filter((item) => item.id === Number(id))
+  const deviceDetails = deviceData
+    .filter((item) => item.id === Number(id))
+    .map((item) => ({
+      ...item,
+      User: item["User "], 
+    }));
   console.log(deviceDetails);
   
   const navigate = useNavigate();
